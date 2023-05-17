@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>1부터 100 범위 안의 숫자를 입력하세요:</h1>
+  <input type="number" name="inputNum" id="numberInput">
+  <input onclick="checkNum()" type="submit" value="확인">
+  <p>입력 결과:</p>
+  <textarea name="result" id="result" cols="60" rows="10"></textarea>
+  <script>
+    function checkNum() {
+      let inputNum, result;
+      inputNum = document.querySelector('#numberInput').value;
+      console.log(inputNum)
+      if(inputNum >=1 && inputNum <= 100) result = '성공적으로 입력하였습니다!'
+      else result =  '입력 범위가 맞지 않습니다!';
+
+      document.querySelector('#result').value = result;
+    }
+  </script>
+</body>
+</html>

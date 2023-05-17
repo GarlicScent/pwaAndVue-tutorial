@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <title>Document</title>
+  <style>
+    .blue_style {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <h1 v-bind:class="sColorName + '_style'" >안녕하세요!</h1>
+    <input v-bind:value="sDate">
+  </div>
+  <script>
+    let app = new Vue({
+      el: '#main',
+      data: {
+        sDate: 'This year: ' + new Date().getFullYear(),
+        sColorName: 'blue'
+      }
+    })
+  </script>
+</body>
+</html>

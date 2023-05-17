@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>안녕하세요! PWA by JS</title>
+  <style>
+    html, body{
+      height: 100%;
+      background-color: #f3a530;
+      color:#ffffff;
+    }
+    .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>안녕하세요!</h1>
+    <img src="./images/hello-pwa.png" alt="">
+    <p>by JS</p>
+  </div>
+
+  <script>
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker
+        .register('./service_worker.js')
+        .then(function () {
+          console.log('서비스 워커가 등록됨!');
+        })
+    }
+  </script>
+</body>
+</html>
